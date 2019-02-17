@@ -1,0 +1,482 @@
+@import '../../../../../scss/shared';
+
+.container {
+  max-width: 100%;
+  margin-top: 83px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.upper-content {
+  min-width: 320px;
+  max-width: 100vw;
+  margin: 0;
+  padding-top: 65px;
+  padding-left: 40px;
+  background-image: url('/assets/temp/images/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+
+  .tagline-container {
+    h1 {
+      font-weight: 600;
+      color: $color-white;
+      text-shadow: $text-shadow;
+      margin-bottom: 30px;
+      font-size: 45px;
+    }
+
+    h2,
+    h5,
+    p {
+      color: $color-white;
+      text-shadow: $text-shadow;
+      font-weight: 100;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    span.btn-or {
+      margin: 0 20px;
+      font-size: 24px;
+      position: relative;
+      top: 5px;
+      color: $color-white;
+      text-shadow: $text-shadow;
+      font-weight: 100;
+    }
+
+    .btn-swu-container {
+      margin-top: 30px;
+    }
+  }
+}
+
+.btn-swu {
+  @include btn-primary;
+
+  width: 205px;
+  display: inline-block;
+}
+
+.jumbotron-container {
+  background-color: $bg-lighter-gray;
+  margin: 20px 0 0 0;
+  height: 400px;
+  max-height: 400px;
+  min-height: 250px;
+}
+
+h1.jumbotron-title,
+h1.wwa-title,
+h1.eco-benefits-title {
+  padding-top: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.benefits-container {
+  padding: 40px;
+  background-color: $bg-black;
+  min-width: 320px;
+
+  .col-md-5,
+  .col-lg-4 {
+    border-right: thin $color-gray solid;
+  }
+
+  h1.benefits-title {
+    margin: 10px 10px 40px 10px;
+    font-weight: 600;
+    font-size: 60px;
+    color: $color-white;
+  }
+}
+
+.eco-benefits-container {
+  height: 400px;
+  padding: 70px 20px;
+}
+
+.quote-from-container {
+  background-color: $bg-lighter-gray;
+  height: 350px;
+  padding: 20px;
+}
+
+.wwa-container {
+  background-color: $bg-lighter-gray;
+}
+
+.we-work-with-container {
+  height: 350px;
+  padding: 40px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+}
+
+.wwa-desc {
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.footer-container {
+  background-color: $bg-black;
+  height: 350px;
+  padding: 50px;
+}
+
+@media (max-width: 1550px) {
+  .upper-content .tagline-container h1 {
+    font-size: 40px;
+  }
+
+  .footer-container {
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 1175px) {
+  .upper-content {
+    background-position: 50% 50%;
+    padding: 0 20px;
+    padding-top: 35px;
+    height: 450px;
+
+    .tagline-container {
+      margin: 10px;
+      padding: 0;
+
+      h1 {
+        font-size: 38px;
+        margin-bottom: 35px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      h5 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .btn-swu-container {
+        margin-top: 20px;
+      }
+
+      .col-lg-8 {
+        flex: 0 0 85%;
+        max-width: 85%;
+      }
+    }
+  }
+
+  .eco-benefits-container {
+    padding: 30px;
+    height: 280px;
+  }
+
+  .quote-from-container {
+    height: 290px;
+  }
+
+  .we-work-with-container {
+    height: 240px;
+    padding: 10px;
+
+    h1 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 145px;
+    padding-bottom: 5px;
+  }
+
+  .we-work-with-container {
+    height: 185px;
+
+    h1 {
+      font-size: 22px;
+    }
+  }
+
+  .benefits-container {
+    padding: 20px;
+
+    h1.benefits-title {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .jumbotron-container {
+    height: 335px;
+    max-height: 335px;
+  }
+
+  h1.jumbotron-title,
+  h1.wwa-title,
+  h1.eco-benefits-title {
+    margin: 15px;
+    font-size: 24px;
+  }
+
+  .eco-benefits-container {
+    height: 180px;
+    padding: 15px 10px;
+  }
+
+  .quote-from-container {
+    height: 190px;
+  }
+
+  .upper-content {
+    margin-bottom: 10px;
+    height: 420px;
+
+    .tagline-container {
+      margin: 7px;
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 25px;
+      }
+
+      .btn-swu {
+        max-width: 250px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      h5 {
+        font-size: 16px;
+      }
+
+      .btn-swu-container {
+        margin-top: 15px;
+      }
+
+      .col-lg-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+    }
+  }
+
+  .footer-container {
+    height: 270px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 660px) {
+  .upper-content {
+    .tagline-container {
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .upper-content {
+    height: 470px;
+
+    .tagline-container {
+      padding: 18px 10px;
+      margin: 0;
+
+      .btn-swu-container {
+        text-align: center;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      h5 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 12px;
+        margin-bottom: 0;
+      }
+
+      .btn-swu-container {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .benefits-container {
+    padding: 20px;
+
+    h1.benefits-title {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .col-md-5,
+    .col-lg-4 {
+      border-right: none;
+    }
+  }
+
+  .jumbotron-container {
+    display: none;
+  }
+
+  .eco-benefits-container {
+    height: 145px;
+  }
+
+  .wwa-container {
+    margin-top: 0;
+
+    .wwa-title {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    .wwa-desc {
+      font-size: 14px;
+      margin: 5px 10px;
+    }
+  }
+
+  .we-work-with-container {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .footer-container {
+    padding: 20px 10px;
+    height: 235px;
+  }
+}
+
+@media (max-width: 375px) {
+  .upper-content {
+    height: 435px;
+
+    .tagline-container {
+      padding: 5px 0;
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .btn-swu {
+        max-width: 250px;
+      }
+
+      span.btn-or {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .benefits-container {
+    padding: 10px;
+
+    h1.benefits-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .col-12.col-md-4 {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .col-12 {
+      padding: 0 5px;
+    }
+  }
+
+  .eco-benefits-container {
+    height: 120px;
+  }
+
+  .quote-from-container {
+    height: 160px;
+  }
+}
+
+@media (max-width: 360px) {
+  .upper-content {
+    height: 435px;
+
+    .tagline-container {
+      margin: 0;
+
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      h5 {
+        font-weight: 100;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .wwa-container {
+    height: 820px;
+  }
+
+  .footer-container {
+    height: 350px;
+  }
+}
+
+@media (max-width: 320px) {}

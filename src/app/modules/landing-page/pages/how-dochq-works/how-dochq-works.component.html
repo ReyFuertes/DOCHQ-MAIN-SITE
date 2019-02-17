@@ -1,0 +1,103 @@
+<app-top-nav></app-top-nav>
+
+<div class="container">
+  <div class="row hdw-header-container m-0">
+    <div class="col col-5 hdw-text">
+      <ng-container *ngTemplateOutlet="headerText;"></ng-container>
+    </div>
+    <div class="col-12 col-md-7 hdw-img">
+      <ng-container *ngTemplateOutlet="headerText;"></ng-container>
+    </div>
+  </div>
+
+  <div class="shwd-container">
+    <div class="col-12 shwd-text">
+      <h1>Staying healthy with DocHQ</h1>
+      <p>We create a personalised health profile with your workforce as part of onboarding. This helps us keep track of
+        their daily health. If and when your employees get sick, they can just give us a call.</p>
+    </div>
+
+    <div class="row shwd-process">
+      <div class="circle">Call for a mobile appointment</div>
+      <span class="arrow-right"></span>
+      <div class="circle">Consultation with the Doctor or Nurse</div>
+      <span class="arrow-right rex"></span>
+      <div class="circle">Treatment arranged within 34 hours</div>
+      <span class="arrow-right"></span>
+      <div class="circle">Follow up care</div>
+    </div>
+  </div>
+
+  <div class="swu-container">
+    <div class="row">
+      <div class="col-12 col-md-6 swu-title">
+        <h1>What does this mean for you?</h1>
+      </div>
+      <div class="col-12 col-md-6 swu-parag">
+        <p>Happier, healthies workforce</p>
+        <p>Employees take less time off work</p>
+        <p>Employees have fast access to healthcare</p>
+        <p>Decreased adminsitrative costs</p>
+        <p>We manage sick leave & support return to work</p>
+        <p>Impored productivity and retention</p>
+
+        <button type="button" class="btn btn-swu">Speak with us</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wdt-container">
+    <div class="col-12">
+      <h1>What DocHQ treats</h1>
+      <div class="row">
+        <div class="col-4 col-md-3">
+          <p>Allegies</p>
+          <p>Anxiety</p>
+          <p>Asthma</p>
+          <p>Backache</p>
+          <p>Chest infection</p>
+          <p>Childhood illness</p>
+          <p>Cough</p>
+          <p>Colds</p>
+          <p>Cystitis</p>
+        </div>
+        <div class="col-8 col-md-9">
+          <p>Depression</p>
+          <p>Digestive problems</p>
+          <p>Ear, nose and throat problems (e.g sinusitis)</p>
+          <p>Sore throat, earache</p>
+          <p>Hay-fever</p>
+          <p>Headache</p>
+          <p>Migraine</p>
+          <p>Mens Health</p>
+          <p>Skin problems (e.g acne, rash, infection)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="da-container">
+    <div class="col-6 col-lg-4">
+      <h1>Download our new DocHQ app</h1>
+      <img src="/assets/temp/images/app-store.png" />
+      <img src="/assets/temp/images/google-app.png" />
+    </div>
+    <div class="col-6 col-lg-8"></div>
+  </div>
+
+  <div class="quote-from-container">
+    <app-quote-from></app-quote-from>
+  </div>
+
+  <div class="footer-container">
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<ng-template #headerText>
+  <div class="hdw-img-text">
+    <h1>How DocHQ works.</h1>
+    <p>We work with local GPs to give your employees quality and accessible healthcare.</p>
+    <button type="button" class="btn btn-swu">Speak with us</button>
+  </div>
+</ng-template>

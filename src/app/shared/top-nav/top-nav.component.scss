@@ -1,0 +1,52 @@
+@import '../../../scss/shared';
+
+:host {
+  min-width: 320px;
+}
+
+.btn-speak-with-us {
+  @include btn-primary;
+
+  min-width: 170px;
+}
+
+img {
+  cursor: pointer;
+}
+
+.nav-item {
+  padding: 15px;
+}
+
+nav {
+  min-width: 320px;
+}
+
+.active-link {
+  background: $bg-whitesmoke;
+  border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 10px 0;
+  }
+
+  .nav-item {
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    a {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  .nav-item {
+    padding: 8px;
+  }
+}
