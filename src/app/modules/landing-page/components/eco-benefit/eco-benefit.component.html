@@ -1,18 +1,22 @@
 <div class="container">
   <div class="row text-center m-auto">
     <div class="col-lg-4 eb-row">
-      <h1>£77 Billion</h1>
-      <h4>Is the productivity cost of sick staff</h4>
+      <h1>£<span class="cbg-red">77</span> Bn</h1>
+      <h4>is the cost of lost productivity by British forms through sick employees in 2018</h4>
+      <p>Source: <span class="font-weight-bold">Mercer</span></p>
     </div>
 
-    <div class="col-lg-4 eb-row">
-      <i class="fas fa-chart-bar"></i>
-      <h4>This icon replaces Font Awesome 4's fa-bar-chart</h4>
-    </div>
-
-    <div class="col-lg-4 eb-row">
-      <h1>86%</h1>
+    <div *ngIf="myChart" class="col-lg-4 eb-row">
+      <span class="fill-text">86%</span>
+      <canvas #myChart height="120" width="120"></canvas>
       <h4>Admit they have gone to work whilst sick</h4>
+      <p>Source: <span class="font-weight-bold">CIPD</span></p>
+    </div>
+
+    <div class="col-lg-4 eb-row">
+      <h1><span class="cbg-red">2</span> weeks</h1>
+      <h4>is the amount of time one in five patients waited for a GP appointment in Oct 2018</h4>
+      <p>Source: <span class="font-weight-bold">BMJ</span></p>
     </div>
   </div>
 </div>

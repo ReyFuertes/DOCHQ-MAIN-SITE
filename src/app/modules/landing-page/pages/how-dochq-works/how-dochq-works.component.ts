@@ -9,4 +9,6 @@ export class HowDocHQWorksComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
+
+  
 }

@@ -7,52 +7,39 @@
   padding-right: 0;
 }
 
-.upper-content {
-  min-width: 320px;
-  max-width: 100vw;
-  margin: 0;
-  padding-top: 65px;
-  padding-left: 40px;
-  background-image: url('/assets/temp/images/banner.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
+.tagline-header-container {
+  height: auto;
 
-  .tagline-container {
+  .tagline-img .tagline-img-text {
+    background-color: transparent;
+    display: none;
+  }
+
+  .tagline-text,
+  .tagline-img-text {
+    background-color: $bg-black;
+    color: $color-white;
+    padding: 20px 50px;
+
     h1 {
+      font-size: 80px;
+      text-shadow: $text-shadow;
       font-weight: 600;
-      color: $color-white;
-      text-shadow: $text-shadow;
-      margin-bottom: 30px;
-      font-size: 45px;
-    }
-
-    h2,
-    h5,
-    p {
-      color: $color-white;
-      text-shadow: $text-shadow;
-      font-weight: 100;
-      margin-bottom: 15px;
     }
 
     p {
-      font-size: 14px;
-    }
-
-    span.btn-or {
-      margin: 0 20px;
-      font-size: 24px;
-      position: relative;
-      top: 5px;
-      color: $color-white;
+      margin-bottom: 40px;
+      font-size: 28px;
+      font-weight: 200;
       text-shadow: $text-shadow;
-      font-weight: 100;
     }
+  }
 
-    .btn-swu-container {
-      margin-top: 30px;
-    }
+  .tagline-img {
+    background-image: url('/assets/images/tagline-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 80%;
   }
 }
 
@@ -133,13 +120,25 @@ h1.eco-benefits-title {
 
 .footer-container {
   background-color: $bg-black;
-  height: 350px;
+  height: auto;
   padding: 50px;
 }
 
 @media (max-width: 1550px) {
-  .upper-content .tagline-container h1 {
-    font-size: 40px;
+  .tagline-header-container {
+
+    .tagline-text,
+    .tagline-img-text {
+      padding: 30px;
+
+      h1 {
+        font-size: 60px;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .footer-container {
@@ -148,47 +147,27 @@ h1.eco-benefits-title {
 }
 
 @media (max-width: 1175px) {
-  .upper-content {
-    background-position: 50% 50%;
-    padding: 0 20px;
-    padding-top: 35px;
-    height: 450px;
+  .tagline-header-container {
 
-    .tagline-container {
-      margin: 10px;
-      padding: 0;
+    .tagline-text,
+    .tagline-img-text {
+      padding: 10px;
 
       h1 {
-        font-size: 38px;
-        margin-bottom: 35px;
-      }
-
-      h2 {
-        font-size: 28px;
-      }
-
-      h5 {
-        font-size: 18px;
+        font-size: 35px;
       }
 
       p {
-        font-size: 14px;
-      }
-
-      .btn-swu-container {
-        margin-top: 20px;
-      }
-
-      .col-lg-8 {
-        flex: 0 0 85%;
-        max-width: 85%;
+        margin-bottom: 0;
+        font-size: 22px;
+        font-weight: 100;
       }
     }
   }
 
   .eco-benefits-container {
-    padding: 30px;
-    height: 280px;
+    padding: 40px 10px;
+    height: 300px;
   }
 
   .quote-from-container {
@@ -208,8 +187,32 @@ h1.eco-benefits-title {
 }
 
 @media (max-width: 768px) {
+  .tagline-header-container {
+    height: auto;
+    background-color: $bg-white;
+    padding: 0;
+
+    .tagline-img .tagline-img-text {
+      display: block;
+
+      h1 {
+        font-size: 54px;
+        line-height: 80px;
+      }
+
+      p {
+        margin-bottom: 30px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .tagline-text {
+    display: none;
+  }
+
   .container {
-    margin-top: 145px;
+    margin-top: 182px;
     padding-bottom: 5px;
   }
 
@@ -243,8 +246,8 @@ h1.eco-benefits-title {
   }
 
   .eco-benefits-container {
-    height: 180px;
-    padding: 15px 10px;
+    height: 220px;
+    padding: 25px 10px;
   }
 
   .quote-from-container {
@@ -288,59 +291,39 @@ h1.eco-benefits-title {
   }
 
   .footer-container {
-    height: 270px;
     padding: 30px;
   }
 }
 
 @media (max-width: 660px) {
-  .upper-content {
-    .tagline-container {
-
+  .tagline-header-container {
+    .tagline-img .tagline-img-text {
       h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 22px;
+        font-size: 50px;
+        line-height: 70px;
       }
     }
+  }
+
+  .eco-benefits-container {
+    height: 225px;
+    padding: 30px 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .upper-content {
-    height: 470px;
-
-    .tagline-container {
-      padding: 18px 10px;
-      margin: 0;
-
-      .btn-swu-container {
-        text-align: center;
-        padding: 0;
-      }
+  .tagline-header-container {
+    .tagline-img .tagline-img-text {
+      padding: 10px;
 
       h1 {
-        font-size: 28px;
-        margin-bottom: 15px;
-      }
-
-      h2 {
-        font-size: 24px;
-      }
-
-      h5 {
-        font-size: 16px;
+        font-size: 38px;
+        line-height: 50px;
       }
 
       p {
-        font-size: 12px;
-        margin-bottom: 0;
-      }
-
-      .btn-swu-container {
-        margin-top: 12px;
+        margin-bottom: 30px;
+        font-size: 18px;
       }
     }
   }
@@ -363,10 +346,6 @@ h1.eco-benefits-title {
     display: none;
   }
 
-  .eco-benefits-container {
-    height: 145px;
-  }
-
   .wwa-container {
     margin-top: 0;
 
@@ -377,7 +356,7 @@ h1.eco-benefits-title {
 
     .wwa-desc {
       font-size: 14px;
-      margin: 5px 10px;
+      margin: 5px 10px 20px;
     }
   }
 
@@ -389,7 +368,6 @@ h1.eco-benefits-title {
 
   .footer-container {
     padding: 20px 10px;
-    height: 235px;
   }
 }
 
@@ -435,7 +413,12 @@ h1.eco-benefits-title {
   }
 
   .eco-benefits-container {
-    height: 120px;
+    height: 185px;
+    padding: 20px 10px;
+  }
+
+  h1.wwa-title {
+    padding-top: 20px;
   }
 
   .quote-from-container {
@@ -445,7 +428,7 @@ h1.eco-benefits-title {
 
 @media (max-width: 360px) {
   .upper-content {
-    height: 435px;
+    height: 410px;
 
     .tagline-container {
       margin: 0;
@@ -472,10 +455,6 @@ h1.eco-benefits-title {
 
   .wwa-container {
     height: 820px;
-  }
-
-  .footer-container {
-    height: 350px;
   }
 }
 

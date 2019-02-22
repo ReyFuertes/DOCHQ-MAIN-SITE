@@ -10,44 +10,44 @@ export class WhoWeAreComponent implements OnInit {
   @Input()
   public thumbnails: Thumbnail[] = [
     {
-      image: '/assets/temp/images/thumbnail-image.png',
-      title: 'Appointments',
-      description: 'Mobile and video appointments with medical team'
+      image: '/assets/svg/noun_Mobile_1202520.svg',
+      title: 'Video Appointments',
+      description: 'Call a medic from your mobile phone'
     },
     {
-      image: '/assets/temp/images/thumbnail-image.png',
-      title: 'Consultations',
-      description: 'Face-to-face consultation with local GP in 24 hours'
+      image: '/assets/svg/noun_Doctor_1355572.svg',
+      title: 'Face-to-face Consultations',
+      description: 'No fuss consultations within 24 hours'
     },
     {
-      image: '/assets/temp/images/thumbnail-image.png',
+      image: '/assets/svg/noun_Prescription_2138877.svg',
       title: 'Prescriptions',
       description: 'Convenient prescription and medication delivery'
     },
     {
-      image: '/assets/temp/images/thumbnail-image.png',
+      image: '/assets/svg/noun_doctors_prescription_2154615_000000.svg',
       title: 'Sick notes',
       description: 'Instantly drafted and set to HR'
     },
     {
-      image: '/assets/temp/images/thumbnail-image.png',
+      image: '/assets/svg/noun_Stethoscope_710443.svg',
       title: 'Annual Health Check',
-      description: 'For those on the Back to Work plan'
+      description: 'Proactively care for your employees'
     },
     {
-      image: '/assets/temp/images/thumbnail-image.png',
+      image: '/assets/svg/noun_Conversation_1450139.svg',
       title: 'Referrals',
-      description: 'To specialist medical teams if required'
+      description: 'To specialist if required'
     },
     {
-      image: '/assets/temp/images/thumbnail-image.png',
-      title: 'Preventive Healthcare',
-      description: 'We follow up with employees and send periodic advice'
+      image: '/assets/svg/noun_Mobile_1086535.svg',
+      title: 'Mobile App',
+      description: "Exper advice at your team's fingertips"
     },
     {
-      image: '/assets/temp/images/thumbnail-image.png',
-      title: 'Symptom Checker',
-      description: 'Specialist advice always on hand'
+      image: '/assets/svg/noun_Doctor_2207514_000000.svg',
+      title: 'Follow-up care',
+      description: 'For your employees after they have been unwell'
     }
   ]; 
 

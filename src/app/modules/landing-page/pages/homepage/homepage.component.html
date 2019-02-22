@@ -1,7 +1,15 @@
 <app-top-nav></app-top-nav>
 
 <div class="container">
-  <div class="upper-content">
+  <div class="row tagline-header-container m-0">
+    <div class="col col-5 tagline-text">
+      <ng-container *ngTemplateOutlet="headerText;"></ng-container>
+    </div>
+    <div class="col-12 col-md-7 tagline-img">
+      <ng-container *ngTemplateOutlet="headerText;"></ng-container>
+    </div>
+  </div>
+  <!-- <div class="upper-content">
     <div class="tagline-container">
       <div class="col-12 col-lg-8">
         <h1>“Take care of the health of your employees, whilst taking care of the health of your business”</h1>
@@ -16,7 +24,7 @@
         <button type="button" class="btn btn-swu">Speak with us</button>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <div class="wwa-container">
@@ -29,7 +37,7 @@
 <div class="benefits-container">
   <div class="row m-0 p-0">
     <div class="col-12 col-md-5 col-lg-4">
-      <h1 class="benefits-title">Benefits of using DocHQ</h1>
+      <h1 class="benefits-title">We benefit you and your team<span class="cbg-red">.</span></h1>
       <button type="button" class="btn btn-swu">Speak with us</button>
     </div>
     <div class="col-12 col-md-7 col-lg-8">
@@ -50,11 +58,13 @@
   <app-quote-from></app-quote-from>
 </div>
 
-<div class="we-work-with-container">
-  <h1>Companies we work with</h1>
-  <app-we-work-with></app-we-work-with>
-</div>
-
 <div class="footer-container">
   <app-footer></app-footer>
 </div>
+
+<ng-template #headerText>
+  <div class="tagline-img-text">
+    <h1>GP services for a stronger workforce.</h1>
+    <p>We partnet with local general practices to give your employees easy access toa medical team when they need it</p>
+  </div>
+</ng-template>

@@ -18,10 +18,15 @@
   h1 {
     margin-bottom: 20px;
     font-style: italic;
+    font-weight: 100;
   }
 
   img {
     border-radius: 50%;
+  }
+
+  h5 {
+    font-weight: 600;
   }
 }
 
@@ -73,6 +78,14 @@
 
     img {
       margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .qf-row {
+    h1 {
+      margin-bottom: 7px;
     }
   }
 }

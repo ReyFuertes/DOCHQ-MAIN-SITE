@@ -50,6 +50,15 @@
   display: inline-block;
 }
 
+.btn-cs {
+  @include btn-primary;
+
+  margin-top: 20px;
+  max-width: 200px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
 .shwd-text {
   max-width: 800px;
   margin: 0 auto;
@@ -69,24 +78,27 @@
 }
 
 .swu-container {
-  padding: 20px 40px;
+  padding: 70px;
   background-color: $bg-black;
 
   .swu-title {
-    padding: 30px 120px;
+    padding: 10px 90px;
+    border-right: thin #CCC solid;
 
     h1 {
       font-size: 75px;
       color: $color-white;
+      font-weight: 600;
     }
   }
 
   .swu-parag {
-    padding: 40px;
+    padding: 10px 70px;
 
     p {
       color: $color-white;
-      font-size: 20px;
+      font-size: 22px;
+      font-weight: 100;
     }
 
     button {
@@ -95,40 +107,22 @@
   }
 }
 
-.shwd-process {
-  height: 225px;
+.shwd-process,
+.wdt-process {
+  height: 190px;
   max-width: 1200px;
   margin: 10px auto;
 
-  .circle {
-    height: 180px;
-    width: 180px;
-    background-color: $bg-light-gray;
-    border-radius: 50%;
-    margin: 10px;
-    padding: 36px 30px;
-    font-weight: 600;
-    text-align: center;
-    font-size: 20px;
-    margin: 0 auto;
-    line-height: 27px;
-
-    &:nth-child(1) {
-      padding: 42px 30px;
-    }
-
-    &:nth-child(7) {
-      padding: 65px 30px;
-    }
+  img {
+    height: 150px;
   }
 
-  .arrow-right {
-    background-image: url('/assets/temp/images/arrow-right.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 58px;
-    width: 100px;
-    margin-top: 5%;
+  .media-body {
+    font-size: 20px;
+    line-height: 28px;
+    padding: 15px 0 15px 5px;
+    text-align: left;
+    font-weight: 600;
   }
 }
 
@@ -145,25 +139,37 @@
   h1 {
     text-align: center;
     margin-bottom: 20px;
+    font-weight: 600;
   }
 
   p {
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
 
 .da-container {
   padding: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
 
   h1 {
     font-size: 40px;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 200;
   }
 
   img {
-    display: block;
+    display: inline-block;
+    margin-right: 5px;
   }
 }
 
@@ -196,27 +202,23 @@
     height: auto;
   }
 
-  .shwd-process {
-    .circle {
-      height: 160px;
-      width: 160px;
-      padding: 30px;
-      font-size: 18px;
+  .shwd-process,
+  .wdt-process {
+    height: auto;
 
-      &:nth-child(7) {
-        padding: 55px 30px;
-      }
+    img {
+      height: 100px;
     }
 
-    .arrow-right {
-      height: 48px;
-      width: 90px;
+    .media-body {
+      font-size: 18px;
+      padding: 0 0 0 10px;
     }
   }
 
   .swu-container {
     padding: 20px;
-  
+
     .swu-title {
       padding: 40px;
 
@@ -224,15 +226,15 @@
         font-size: 55px;
       }
     }
-  
+
     .swu-parag {
       padding: 20px;
-  
+
       p {
         color: $color-white;
         font-size: 18px;
       }
-  
+
       button {
         margin-top: 20px;
       }
@@ -245,6 +247,35 @@
 
   .footer-container {
     padding: 50px 20px;
+  }
+
+  .da-container {
+    padding: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .col-md-7 {
+      img {
+        width: 145px;
+      }
+    }
+
+    .col-md-5 {
+      img {
+        width: 250px;
+      }
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 200;
+    }
   }
 }
 
@@ -261,27 +292,40 @@
     }
   }
 
-  .shwd-process {
-    max-width: 990px;
-    margin: 0 auto;
-
-    .circle {
-      height: 150px;
-      width: 150px;
-      font-size: 16px;
-      line-height: 24px;
+  .swu-container {
+    .swu-title {
+      h1 {
+        font-size: 40px;
+      }
     }
 
-    .arrow-right {
-      height: 38px;
-      width: 65px;
-      margin-top: 6%;
+    .swu-parag {
+      padding: 10px 30px;
+    }
+  }
+
+  .shwd-process,
+  .wdt-process {
+    height: 125px;
+    max-width: 1200px;
+    margin: 10px auto;
+
+    img {
+      height: 110px;
+      width: 90px;
+    }
+
+    .media-body {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 500;
+      padding: 10px 0;
     }
   }
 
   .da-container {
     padding: 30px;
-  
+
     h1 {
       font-size: 30px;
       margin-bottom: 30px;
@@ -289,25 +333,7 @@
   }
 }
 
-@media (max-width: 820px) {
-  .shwd-process {
-    max-width: 990px;
-    margin: 0 auto;
-
-    .circle {
-      height: 130px;
-      width: 130px;
-      padding: 26px;
-      font-size: 14px;
-    }
-
-    .arrow-right {
-      height: auto;
-      width: 40px;
-      margin-top: 55px;
-    }
-  }
-}
+@media (max-width: 820px) {}
 
 @media (max-width: 768px) {
   .container {
@@ -338,52 +364,37 @@
     display: none;
   }
 
-  .shwd-process {
-    .circle {
-      height: 110px;
-      width: 110px;
-      padding: 21px;
-      font-size: 12px;
-      line-height: 18px;
+  .shwd-process,
+  .wdt-process {
+    height: auto;
 
-      &:nth-child(1) {
-        padding: 29px 20px;
-      }
-
-      &:nth-child(7) {
-        padding: 35px 30px;
-      }
-    }
-
-    .arrow-right {
-      margin-top: 45px;
+    .media-body {
+      font-weight: 600;
     }
   }
 
   .swu-container {
     .swu-title {
       padding: 30px 30px 0 30px;
-
-      h1 {
-        font-size: 40px;
-      }
     }
-  
+
     .swu-parag {
       padding: 10px 30px;
     }
   }
 
   .da-container {
-    padding: 20px;
-  
+    padding: 30px;
+
+    .col-md-5 {
+      img {
+        display: none;
+      }
+    }
+
     h1 {
       font-size: 24px;
       margin-bottom: 20px;
-    }
-  
-    img {
-      height: 60px;
     }
   }
 
@@ -420,60 +431,29 @@
     }
   }
 
-  .shwd-process {
-    .circle {
-      height: 90px;
-      width: 90px;
-      padding: 15px;
-      font-size: 11px;
-      line-height: 16px;
-
-      &:nth-child(1) {
-        padding: 20px 13px;
-      }
-
-      &:nth-child(7) {
-        padding: 30px 15px;
-      }
+  .da-container {
+    h1 {
+      margin-bottom: 15px;
     }
 
-    .arrow-right {
-      width: 29px;
-      margin-top: 38px;
+    p {
+      font-size: 18px;
     }
   }
 }
 
 @media (max-width: 480px) {
-  .shwd-process {
+
+  .shwd-process,
+  .wdt-process {
     height: auto;
+    max-width: 400px;
+    margin: 0 auto;
 
-    span.rex {
-      display: none;
-    }
-
-    .circle {
-      height: 150px;
-      width: 150px;
+    .media-body {
       font-size: 16px;
-      padding: 40px 15px;
-      font-weight: 500;
-      line-height: 20px;
-      margin: 10px auto;
-      font-weight: 600;
-
-      &:nth-child(1) {
-        padding: 50px 13px;
-      }
-
-      &:nth-child(7) {
-        padding: 65px 15px;
-      }
-    }
-
-    .arrow-right {
-      width: 65px;
-      margin-top: 65px;
+      text-align: left;
+      padding-left: 5px;
     }
   }
 
@@ -512,10 +492,10 @@
       padding: 10px 30px 0 30px;
 
       h1 {
-        font-size: 40px;
+        font-size: 35px;
       }
     }
-  
+
     .swu-parag {
       padding: 10px 30px;
 
@@ -527,30 +507,36 @@
 
   .wdt-container {
     padding: 20px;
-  
+
     .col-12 {
       padding: 0;
     }
 
     h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
+      font-size: 26px;
+      margin-bottom: 10px;
+      font-weight: 600;
     }
-  
+
     p {
       font-weight: 500;
       font-size: 14px;
+      text-align: center;
     }
   }
 
   .da-container {
     padding: 15px;
-  
+
     h1 {
-      font-size: 20px;
-      margin-bottom: 15px;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
-  
+
+    p {
+      font-size: 16px;
+    }
+
     img {
       height: 50px;
     }
@@ -560,29 +546,18 @@
     padding: 20px 10px;
     height: 235px;
   }
+
 }
 
 @media (max-width: 375px) {
-  .shwd-process {
-    .circle {
-      height: 125px;
-      width: 125px;
-      margin: 10px auto;
-      font-size: 14px;
-      padding: 25px 20px;
 
-      &:nth-child(1) {
-        padding: 35px 13px;
-      }
-
-      &:nth-child(7) {
-        padding: 50px 15px;
-      }
-    }
-
-    .arrow-right {
-      width: 45px;
-      margin-top: 60px;
+  .shwd-process,
+  .wdt-process {
+    .media-body {
+      font-size: 16px;
+      text-align: left;
+      padding-left: 5px;
+      font-weight: 500;
     }
   }
 
@@ -604,12 +579,16 @@
   .swu-container {
     .swu-title {
       padding: 10px 20px;
-      
+
       h1 {
         font-size: 30px;
       }
     }
-  
+
+    .btn-cs {
+      margin: 10px 0;
+    }
+
     .swu-parag {
       padding: 10px 20px;
 
@@ -621,6 +600,17 @@
 
   .quote-from-container {
     height: 160px;
+  }
+
+  .da-container {
+    padding: 20px;
+
+    .col-md-7 {
+      img {
+        height: auto;
+        width: 120px;
+      }
+    }
   }
 }
 
@@ -634,12 +624,7 @@
 
   .da-container {
     padding: 15px;
-  
-    h1 {
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-  
+
     img {
       height: 40px;
     }

@@ -1,0 +1,107 @@
+<app-top-nav></app-top-nav>
+
+<div class="container">
+  <div class="row cp-header-container m-0">
+    <div class="col col-5 cp-text">
+      <ng-container *ngTemplateOutlet="headerText;"></ng-container>
+    </div>
+    <div class="col-12 col-md-7 cp-img">
+      <ng-container *ngTemplateOutlet="headerText;"></ng-container>
+    </div>
+  </div>
+
+  <div class="row m-0">
+    <div class="swu-container">
+      <h1>It's easy to sign up</h1>
+      <p>Simple book a call, we look to create a package which suites your employees and your business. We can start
+        onboarding immediately and your employees could be calling our Doctors & Nurces within 48hours.</p>
+      <button type="button" class="btn btn-swu">Speak with us</button>
+    </div>
+  </div>
+
+  <div class="row packages-container m-0">
+    <div class="col-12">
+      <h1 class="pkg-title">DocHQ Packages</h1>
+    </div>
+    <div class="row">
+      <div class="card p-0">
+        <div class="card-header">
+          <h4 class="">Back to Work Lite</h4>
+          <h1><span class="c-sign">£</span>8.90<span class="m-abbr">/mo</span> <i class="fas fa-caret-down"></i></h1>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4 text-left">
+            <li><i class="fas fa-check"></i> Mobile phone & video consultation</li>
+            <li><i class="fas fa-check"></i> Appointment management</li>
+            <li><i class="fas fa-check"></i> Prescription & medication delivery</li>
+            <li><i class="fas fa-check"></i> Sick notes & HR administrative</li>
+            <li><i class="fas fa-times"></i> Face-to-face consultation*</li>
+            <li><i class="fas fa-times"></i> Annuaul health check</li>
+          </ul>
+          <button type="button" class="btn btn-swu bg-red">Speak with us</button>
+        </div>
+      </div>
+      <div class="card p-0">
+        <div class="card-header">
+          <h4 class="">Back to Work Lite</h4>
+          <h1><span class="c-sign">£</span>8.90<span class="m-abbr">/mo</span> <i class="fas fa-caret-down"></i></h1>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4 text-left">
+            <li><i class="fas fa-check"></i> Mobile phone & video consultation</li>
+            <li><i class="fas fa-check"></i> Appointment management</li>
+            <li><i class="fas fa-check"></i> Prescription & medication delivery</li>
+            <li><i class="fas fa-check"></i> Sick notes & HR administrative</li>
+            <li><i class="fas fa-times"></i> Face-to-face consultation*</li>
+            <li><i class="fas fa-times"></i> Annuaul health check</li>
+          </ul>
+          <button type="button" class="btn btn-swu bg-red">Speak with us</button>
+        </div>
+      </div>
+      <div class="card p-0">
+        <div class="card-header">
+          <h4 class="">Back to Work Lite</h4>
+          <h1><span class="c-sign">£</span>8.90<span class="m-abbr">/mo</span> <i class="fas fa-caret-down"></i></h1>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4 text-left">
+            <li><i class="fas fa-check"></i> Mobile phone & video consultation</li>
+            <li><i class="fas fa-check"></i> Appointment management</li>
+            <li><i class="fas fa-check"></i> Prescription & medication delivery</li>
+            <li><i class="fas fa-check"></i> Sick notes & HR administrative</li>
+            <li><i class="fas fa-times"></i> Face-to-face consultation*</li>
+            <li><i class="fas fa-times"></i> Annuaul health check</li>
+          </ul>
+          <button type="button" class="btn btn-swu bg-red">Speak with us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row cs-container">
+    <div class="col-12">
+      <h1 class="cs-title">How much could you save?</h1>
+      <p class="cs-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book</p>
+    </div>
+
+    <app-roi-calculator class="cs-calculator col-md-10"></app-roi-calculator>
+  </div>
+
+  <div class="quote-from-container">
+    <app-quote-from></app-quote-from>
+  </div>
+
+  <div class="footer-container">
+    <app-footer></app-footer>
+  </div>
+
+  <ng-template #headerText>
+    <div class="cp-img-text">
+      <h1>Choose a plan</h1>
+      <p>We have a range of packages to suit your business. Whether your employees are office based, on the shop floor
+        or out in the field, we take care of their health.</p>
+      <button type="button" class="btn btn-swu">Speak with us</button>
+    </div>
+  </ng-template>

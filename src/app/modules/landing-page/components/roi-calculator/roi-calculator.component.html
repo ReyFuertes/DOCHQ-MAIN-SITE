@@ -1,0 +1,161 @@
+<div class="container">
+  <form class="row rc">
+    <div class="rc__left-panel col-md-5">
+      <div class="col-12">
+        <div class="field" [ngClass]="{'field--error': roiCalculated && !industry}">
+          <select required class="col-12" name="industry" [(ngModel)]="industry">
+            <option [ngValue]="undefined" hidden selected disabled="">Select your industry</option>
+            <option *ngFor="let i of industries" [ngValue]="i">{{i.label}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="field" [ngClass]="{'field--error': roiCalculated && !employeeCount}">
+          <div class="field__label">Enter number of employees</div>
+          <input class="field__input d-none" placeholder="e.g. 1000" name="employeeCount" [(ngModel)]="employeeCount" (blur)="hideInput($event)">
+          <div class="field__input" (click)="showInput($event)">{{employeeCount ? employeeCount : 'e.g. 1000'}}</div>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="hasSickLeave == 1">
+        <div class="field">
+          <div class="field__label">Do you pay full sick pay?</div>
+          <select matNativeControl required class="field__input" name="sickPayType" [(ngModel)]="sickPayType">
+            <option *ngFor="let s of sickPayTypes" [ngValue]="s.value">{{s.label}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="field--nobg">
+          <div class="field__label flex-column">Do you provide paid sick leave?</div>
+          <div class="field__input radio">
+            <input type="radio" name="paidSickLeave" value="1" [(ngModel)]="hasSickLeave">
+            <label>Yes</label>
+            <input type="radio" name="paidSickLeave" value="0" [(ngModel)]="hasSickLeave">
+            <label>No</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 d-flex my-4">
+        <div class="info" title="You can see your industry average per year. Please modify the fields to suit your company.">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <span class="d-flex" (click)="showAdvancedOptions()">
+          <div class="px-2">Advanced options</div>
+          <i class="fas fa-caret-down"></i>
+        </span>
+      </div>
+      <div class="ao col-12 noselect" *ngIf="isShownAdvancedOptions">
+        <div class="field">
+          <div class="field__label">Average sick leave per person</div>
+          <input class="field__input d-none" name="sickLeaves" [(ngModel)]="industry.sickLeaves" (blur)="hideInput($event)">
+          <div class="field__input" (click)="showInput($event)">{{industry.sickLeaves}} days</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Average salary</div>
+          <input class="field__input d-none" placeholder="50000" name="aveSalary" [(ngModel)]="industry.aveSalary" (blur)="hideInput($event)">
+          <div class="field__input" (click)="showInput($event)">{{industry.aveSalary | currency:'GBP'}}</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Working days</div>
+          <input class="field__input d-none" placeholder="231 days" name="workingDays" [(ngModel)]="workingDays" (blur)="hideInput($event)">
+          <div class="field__input" (click)="showInput($event)">{{workingDays}} days</div>
+        </div>
+        <div class="field">
+          <div class="field__label">Annual attrition rate</div>
+          <input class="field__input d-none" placeholder="15%" name="attrition" [(ngModel)]="industry.attrition" (blur)="hideInput($event)">
+          <div class="field__input" (click)="showInput($event)">{{industry.attrition | percent}}</div>
+        </div>
+      </div>
+      <div class="button-container col-12 mt-5">
+        <div class="btn btn--pink" (click)="calculate()">Calculate savings</div>
+      </div>
+    </div>
+
+    <div class="rc__right-panel col-md-7">
+      <div class="placeholder col-8 m-auto" *ngIf="!roiCalculated || !isFormValid">
+        <div class="placeholder__image col-8"></div>
+        <div class="placeholder__text col-12">Click calculate savings to see your ROI data</div>
+      </div>
+      <div class="col-12" *ngIf="roiCalculated && isFormValid">
+        <div class="col-12">
+          <div class="field--nobg">
+            <div class="field__label">
+              <div class="info invisible">
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <span class="result-label">Direct Cost</span>
+            </div>
+            <div class="field__input">{{directCost | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="field--nobg">
+            <div class="field__label">
+              <div class="info" title="Internal replacement worker: overtime, ‘acting up’ allowance. External replacement worker: daily agency costs. ">
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <span class="result-label">Indirect Cost</span>
+            </div>
+            <div class="field__input">{{indirectCost | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="field--nobg">
+            <div class="field__label">
+              <div class="info" title="Lorem ipsum dolor sit amet">
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <span class="result-label">Retention</span>
+            </div>
+            <div class="field__input">{{retentionCost | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="field--nobg">
+            <div class="field__label">
+              <div class="info" title="This number is your direct, indirect and retention costs combined.">
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <span class="result-label">Annual Cost</span>
+            </div>
+            <div class="field__input text--big">{{annualCost | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-around my-3 mt-5">
+          <div class="col-8 field">
+            <div class="field__label">Annual cost of Back To Work Lite</div>
+            <div class="field__input">{{bwLite | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+          <div class="d-flex flex-column">
+            <div>Total Savings</div>
+            <div class="text--big text--lighter-green">{{bwLiteSavings | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-around my-3">
+          <div class="col-8 field">
+            <div class="field__label">Annual cost of Back To Work</div>
+            <div class="field__input">{{bw | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+          <div class="d-flex flex-column">
+            <div>Total Savings</div>
+            <div class="text--big text--lighter-green">{{bwSavings | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-around my-3">
+          <div class="col-8 field">
+            <div class="field__label">Annual cost of Back To Work Premium</div>
+            <div class="field__input">{{bwPremium | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+          <div class="d-flex flex-column">
+            <div>Total Savings</div>
+            <div class="text--big text--lighter-green">{{bwPremiumSavings | currency:'GBP' : 'symbol' : '1.0'}}</div>
+          </div>
+        </div>
+        <div class="button-container col-12 mt-5">
+          <div class="btn btn--green mx-3">Download detailed report</div>
+          <div class="btn btn--green mx-3">Share with a colleague</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

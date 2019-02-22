@@ -4,6 +4,17 @@
   min-width: 320px;
 }
 
+h5 {
+  cursor: pointer;
+  
+  span {
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    top: 7px;
+  }
+}
+
 .btn-speak-with-us {
   @include btn-primary;
 
@@ -12,6 +23,8 @@
 
 img {
   cursor: pointer;
+  height: 50px;
+  margin-right: 5px;
 }
 
 .nav-item {
