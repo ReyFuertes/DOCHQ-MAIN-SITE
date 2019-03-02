@@ -9,26 +9,10 @@
       <ng-container *ngTemplateOutlet="headerText;"></ng-container>
     </div>
   </div>
-  <!-- <div class="upper-content">
-    <div class="tagline-container">
-      <div class="col-12 col-lg-8">
-        <h1>“Take care of the health of your employees, whilst taking care of the health of your business”</h1>
-        <h2>“NHS GP Services on demand with DocHQ”</h2>
-        <h5>DocHQ partners with local NHS GPs to give your employees the healthcare they need, so they can quickly be
-          back in business.</h5>
-        <p class="mb-0">- Expansion of the above</p>
-        <p>- Motivation</p>
-      </div>
-
-      <div class="col-12 btn-swu-container">
-        <button type="button" class="btn btn-swu">Speak with us</button>
-      </div>
-    </div>
-  </div> -->
 </div>
 
 <div class="wwa-container">
-  <h1 class="wwa-title">Who we are</h1>
+  <h1 class="wwa-title">What we do</h1>
   <p class="wwa-desc">DocHQ works with your local NHS doctors surgey to give your employees private healthcare. Your
     employees get instant access to GPs, nurses and medications, so they are back to normal, faster.</p>
   <app-who-we-are></app-who-we-are>
@@ -38,7 +22,7 @@
   <div class="row m-0 p-0">
     <div class="col-12 col-md-5 col-lg-4">
       <h1 class="benefits-title">We benefit you and your team<span class="cbg-red">.</span></h1>
-      <button type="button" class="btn btn-swu">Speak with us</button>
+      <button type="button" [appExternalUrl]="environment.url.SpeakWithUs" class="btn btn-swu">Speak with us</button>
     </div>
     <div class="col-12 col-md-7 col-lg-8">
       <app-benefits></app-benefits>
@@ -64,7 +48,7 @@
 
 <ng-template #headerText>
   <div class="tagline-img-text">
-    <h1>GP services for a stronger workforce.</h1>
-    <p>We partnet with local general practices to give your employees easy access toa medical team when they need it</p>
+    <h1>GP services for a stronger workforce <i class="fas fa-circle html-period"></i></h1>
+    <p>We partner with local general practices to give your employees easy access to a medical team when they need it</p>
   </div>
 </ng-template>

@@ -29,6 +29,16 @@ body {
   outline: none;
 }
 
+i.html-period {
+  font-size: 10px;
+  color: $color-pink;
+  margin-left: 2px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .cbg-red {
   color: $color-red;
 }

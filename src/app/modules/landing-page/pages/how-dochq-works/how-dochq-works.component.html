@@ -13,8 +13,7 @@
   <div class="shwd-container">
     <div class="col-12 shwd-text">
       <h1>Staying healthy with DocHQ</h1>
-      <p>We create a personalised health profile with your workforce as part of onboarding. This helps us keep track of
-        their daily health. If and when your employees get sick, they can just give us a call.</p>
+      <p>As part of onboarding, we create a personalised health profile with each of your employees. This helps us keep track of their daily health. If a staff member gets sick, they can easily book an appointment.</p>
     </div>
 
     <div class="row shwd-process">
@@ -127,8 +126,8 @@
 
 <ng-template #headerText>
   <div class="hdw-img-text">
-    <h1>How DocHQ works.</h1>
-    <p>We work with local GPs to give your employees quality and accessible healthcare.</p>
-    <button type="button" class="btn btn-swu">Speak with us</button>
+    <h1>How DocHQ works<i class="fas fa-circle html-period"></i></h1>
+    <p>To give your employees quality and accessible healthcare, we partner with GPs local to you. .</p>
+    <button type="button" [appExternalUrl]="environment.url.SpeakWithUs" class="btn btn-swu">Speak with us</button>
   </div>
 </ng-template>

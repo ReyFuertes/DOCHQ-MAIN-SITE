@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -12,6 +12,8 @@ import { WeWorkWithComponent } from './components/we-work-with/we-work-with.comp
 import { HowDocHQWorksComponent } from './pages/how-dochq-works/how-dochq-works.component';
 import { PackagesComponent } from './pages/packages/packages.component';
 import { RoiCalculatorComponent } from './components/roi-calculator/roi-calculator.component';
+import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,14 @@ const routes: Routes = [
   {
     path: 'packages',
     component: PackagesComponent
+  },
+  {
+    path: 'terms-and-conditions',
+    component: TermsAndConditionsComponent
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent
   }
 ]
 
@@ -38,11 +48,14 @@ const routes: Routes = [
     WeWorkWithComponent,
     HowDocHQWorksComponent,
     PackagesComponent,
-    RoiCalculatorComponent
+    RoiCalculatorComponent,
+    TermsAndConditionsComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     CommonModule, 
     FormsModule,
+    ReactiveFormsModule,
     SharedModule, 
     RouterModule.forChild(routes)
   ],

@@ -25,6 +25,7 @@
     h1 {
       font-size: 90px;
       text-shadow: $text-shadow;
+      font-weight: 600;
     }
 
     p {
@@ -36,15 +37,15 @@
   }
 
   .cp-img {
-    background-image: url('/assets/temp/images/hdw-header-img.jpg');
+    background-image: url('/assets/images/packages-cover.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 80%;
+    background-position: 50%;
   }
 }
 
 .swu-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 50px;
   text-align: center;
@@ -55,7 +56,7 @@
   }
 
   p {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 
@@ -66,22 +67,28 @@
 
   h1.pkg-title {
     font-weight: 600;
-    margin: 40px 40px 30px 40px;
+    margin: 40px 40px 20px 40px;
     text-align: center;
   }
 
   .row {
-    max-width: 1400px;
     margin: 0 auto;
   }
 
-  .fa-check {
-    color: $color-red;
+  .f2fc-text {
+    max-width: 1270px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
   }
 
   .bg-red {
     background-color: $bg-red;
     border: thin $color-red solid;
+  }
+
+  .line-through {
+    text-decoration: line-through;
   }
 
   h1 {
@@ -91,7 +98,7 @@
     margin: 20px;
 
     span {
-      font-size: 24px;
+      font-size: 20px;
       position: relative;
       top: -19px;
       margin: 0 2px;
@@ -106,12 +113,26 @@
       position: relative;
       top: 3px;
       font-size: 26px;
+      margin-right: 5px;
     }
   }
 
   .card {
-    max-width: 450px;
-    margin: 10px;
+    max-width: 400px;
+    margin: 15px;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      border: 2px $color-primary solid;
+    }
+  }
+
+  .delay-2s {
+    animation-duration: 3s;
+    animation-delay: 2s;
   }
 
   .card-header {
@@ -125,6 +146,7 @@
 
       li {
         line-height: 40px;
+        font-weight: 600;
       }
     }
   }
@@ -138,7 +160,7 @@
 
 .cs-container {
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 20px auto;
 
   .col-md-6:nth-child(2) {
     border-right: thin $border-line-color solid;
@@ -194,12 +216,36 @@
   }
 }
 
-.btn-swu {
+.btn-primary {
   @include btn-primary;
 
   width: 205px;
   display: inline-block;
   margin: 20px;
+}
+
+.btn-black {
+  @include btn-black;
+
+  width: 205px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.btn-red {
+  @include btn-red;
+
+  width: 205px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.color-primary {
+  color: $color-primary;
+}
+
+.color-red {
+  color: $color-red;
 }
 
 .quote-from-container {
@@ -224,6 +270,10 @@
   }
 
   .packages-container {
+    .card {
+      margin: 10px;
+    }
+
     h1.pkg-title {
       font-size: 40px;
       margin: 30px 20px 10px;
@@ -348,12 +398,18 @@
   }
 
   .cs-container {
-
     .cs-box .col-md-7,
     .cs-box .col-md-3,
     .cs-box .col-md-2 {
       padding: 20px 10px;
       height: 65px;
+    }
+  }
+
+  .packages-container {
+    .f2fc-text {
+      margin-bottom: 30px;
+      text-align: center;
     }
   }
 }
@@ -464,7 +520,7 @@
   .footer-container {
     height: 350px;
   }
-  
+
   .swu-container {
     margin: 0 auto;
     padding: 20px;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-roi-calculator',
@@ -22,18 +23,6 @@ export class RoiCalculatorComponent implements OnInit {
   public bwSavings = 0;
   public bwPremiumSavings = 0;
   public employeeCount = 0;
-  public hasSickLeave: any;
-  public sickPayTypes = [
-    {
-      label: "Statutory",
-      value: 1,
-    },
-    {
-      label: "Full Sick Pay",
-      value: 2
-    }
-  ];
-  public sickPayType = this.sickPayTypes[1].value;
   public industries = [
     {
       label: "Professional Services",
@@ -151,9 +140,25 @@ export class RoiCalculatorComponent implements OnInit {
     }
   ];
   public industry: any;
-  constructor() { }
+  public calcForm = this.fb.group({
+    selectedIndustry: [null, Validators.required],
+    employeeCount: ['', [Validators.min(0), Validators.required]],
+    industry: this.fb.group({
+      sickLeaves: [null, [Validators.min(0), Validators.max(365)]],
+      aveSalary: ['', Validators.min(0)],
+      workingDays: [this.workingDays, [Validators.min(0), Validators.max(365)]],
+      attrition: ['', [Validators.min(0), Validators.max(100)]]
+    }),
+    paidSickLeave: []
+  });
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.calcForm.controls['selectedIndustry'].valueChanges.subscribe((value) => {
+      this.calcForm.patchValue({
+        industry: value
+      });
+    });
   }
 
   showAdvancedOptions() {
@@ -173,7 +178,10 @@ export class RoiCalculatorComponent implements OnInit {
 
   calculate() {
     this.roiCalculated = true;
-    if (!this.industry || !this.employeeCount) {
+    this.employeeCount = this.calcForm.get('employeeCount').value;
+    this.industry = this.calcForm.get('industry').value;
+    this.workingDays = this.industry.workingDays;
+    if (!this.calcForm.valid) {
       return;
     }
     this.isFormValid = true;
@@ -190,16 +198,11 @@ export class RoiCalculatorComponent implements OnInit {
   }
 
   calculateDirectCost() {
-    let spType = this.sickPayType;
     let val = 0;
-    if (this.hasSickLeave == 1) {
-      if (spType == 1) {
-        val = this.industry.sickLeaves / this.workingDays * this.industry.aveSalary * this.employeeCount * 0.1;
-      } else if (spType == 2) {
-        val = 145 / 5 * this.employeeCount * this.industry.sickLeaves;
-      }
+    if (this.calcForm.get('paidSickLeave').value == 1) {
+      val = 145 / 5 * this.employeeCount * this.industry.sickLeaves;
     } else {
-      val = this.industry.sickLeaves / this.workingDays * this.industry.aveSalary * this.employeeCount;
+      val = this.industry.sickLeaves / this.workingDays * this.industry.aveSalary * this.employeeCount * 0.1;
     }
 
     return Math.round(val);

@@ -42,7 +42,7 @@ export class WhoWeAreComponent implements OnInit {
     {
       image: '/assets/svg/noun_Mobile_1086535.svg',
       title: 'Mobile App',
-      description: "Exper advice at your team's fingertips"
+      description: "Expert advice at your team's fingertips"
     },
     {
       image: '/assets/svg/noun_Doctor_2207514_000000.svg',

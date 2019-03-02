@@ -4,10 +4,10 @@
     <span>DocHQ</span>
   </h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a href="javascript:void(0)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item text-dark" routerLink="/how-dochq-works" >How DocHQ works</a>
-    <a href="javascript:void(0)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item text-dark" routerLink="/packages">Packages</a>
-    <a href="javascript:void(0)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item text-dark" routerLink="/faqs">FAQs</a>
-    <a href="javascript:void(0)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item text-dark" routerLink="/contact">Contact</a>
+    <a href="javascript:void(0)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item" routerLink="/how-dochq-works" >How DocHQ works</a>
+    <a href="javascript:void(0)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item" routerLink="/packages">Packages</a>
+    <a href="javascript:void(0)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item" routerLink="/faqs">FAQs</a>
+    <a href="javascript:void(0)" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item" routerLink="/contact">Contact</a>
   </nav>
-  <a class="btn btn-speak-with-us" href="#">Speak with us</a>
+  <a class="btn btn-swu" [appExternalUrl]="environment.url.SpeakWithUs" href="javascript:void(0)">Speak with us</a>
 </div>

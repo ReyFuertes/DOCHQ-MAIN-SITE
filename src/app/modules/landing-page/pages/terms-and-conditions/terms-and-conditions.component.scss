@@ -1,0 +1,27 @@
+@import '../homepage/homepage.component.scss';
+
+.wwa-container {
+  background-color: $bg-white;
+}
+
+.wwa-desc {
+  text-align:left;
+  max-width: 75%;
+}
+
+.wwa-title {
+  max-width: 75%;
+  text-align: center;
+  margin: auto;
+}
+
+.wwa-list-alpha {
+	list-style-type: lower-alpha;
+}
+
+.wwa-boxed {
+	border: 1px solid #000;
+	padding: 15px;
+	border: 7px double;
+	margin: 20px auto;
+}

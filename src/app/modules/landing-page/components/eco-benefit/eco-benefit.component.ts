@@ -23,13 +23,15 @@ export class EcoBenefitComponent implements OnInit, AfterViewInit {
       data: {
         datasets: [{
           data: [86, 14],
-          backgroundColor: ['#e5014d',  '#333333'],
+          backgroundColor: ['#e5014d', '#333333'],
           borderWidth: 1
         }]
       },
       options: {
         responsive: true,
         cutoutPercentage: 70,
+        tooltips: { enabled: false },
+        hover: { mode: null },
         animation: {
           animateScale: true,
           animateRotate: true

@@ -68,6 +68,11 @@
   border: 2px solid $color-red;
 }
 
+.error-message {
+  color: $color-lighter-pink;
+  font-size: 13px;
+}
+
 .placeholder {
   .placeholder__image {
     background-image: url(../../../../../assets/svg/noun_Calculator_1524989.svg);
@@ -141,17 +146,17 @@ select {
   }
 }
 
-[title] {
+[data-title] {
   position: relative;
 }
 
-[title]:hover:before {
+[data-title]:hover:before {
   background: $bg-pink;
   top: 100%;
   background: $bg-pink;
   border-radius: 2px;
   color: $color-white;
-  content: attr(title);
+  content: attr(data-title);
   padding: 5px 15px;
   position: absolute;
   z-index: 98;
@@ -160,7 +165,7 @@ select {
   left: -200%;
 }
 
-[title]:hover:after {
+[data-title]:hover:after {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
@@ -200,6 +205,10 @@ i {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+.cursor--pointer {
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {

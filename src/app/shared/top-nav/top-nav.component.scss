@@ -6,7 +6,7 @@
 
 h5 {
   cursor: pointer;
-  
+
   span {
     font-size: 30px;
     font-weight: 600;
@@ -15,10 +15,11 @@ h5 {
   }
 }
 
-.btn-speak-with-us {
+.btn-swu {
   @include btn-primary;
 
   min-width: 170px;
+  padding: 12px 0;
 }
 
 img {
@@ -29,6 +30,7 @@ img {
 
 .nav-item {
   padding: 15px;
+  color: $color-black;
 }
 
 nav {
@@ -36,8 +38,9 @@ nav {
 }
 
 .active-link {
-  background: $bg-whitesmoke;
+  background: $bg-pink;
   border-radius: 30px;
+  color: $color-white;
 }
 
 @media (max-width: 768px) {
