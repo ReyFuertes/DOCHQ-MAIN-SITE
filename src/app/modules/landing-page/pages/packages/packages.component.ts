@@ -27,7 +27,7 @@ export class PackagesComponent implements OnInit {
       ],
       btnClass: 'btn-black',
       btnText: 'Register Online',
-      url: environment.url.packageBackToWorkLite
+      url: environment.url.packages.packageBackToWorkLite
     },
     {
       title: 'Back to Work',
@@ -43,7 +43,7 @@ export class PackagesComponent implements OnInit {
       ],
       btnClass: 'btn-primary',
       btnText: 'Speak with us',
-      url: environment.url.packagesBackToWork
+      url: environment.url.packages.packagesBackToWork
     },
     {
       title: 'DocHQ Wellness',
@@ -60,7 +60,7 @@ export class PackagesComponent implements OnInit {
       ],
       btnClass: 'btn-red',
       btnText: 'Speak with us',
-      url: environment.url.packagesWellness
+      url: environment.url.packages.packagesWellness
     }
   ]
 

@@ -46,7 +46,7 @@
   .col-sm-4 {
     padding-right: 0;
   }
-  
+
   a {
     color: $color-white;
   }
@@ -129,6 +129,8 @@
 
 @media (max-width: 768px) {
   .footer-menu {
+    padding: 20px 4px;
+
     .col-sm-4 {
       padding: 0;
     }
@@ -140,12 +142,22 @@
     }
   }
 
+  .col-md-8 {
+    padding: 0;
+  }
+
+  .da-container {
+    h1 {
+      font-size: 22px;
+    }
+  }
+
   .col-thumb-menu {
     padding: 0 20px;
   }
 
   .logo-social {
-    max-width: 31%;
+    max-width: 100%;
     padding-left: 5px;
 
     span {
@@ -164,6 +176,13 @@
 
 
 @media (max-width: 480px) {
+  .da-container {
+    h1 {
+      padding-top: 0;
+      font-size: 18px;
+    }
+  }
+
   .col-thumb-menu {
     padding: 0;
 
@@ -198,6 +217,10 @@
     i {
       font-size: 15px;
       margin: 5px 7px;
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
   }
 }

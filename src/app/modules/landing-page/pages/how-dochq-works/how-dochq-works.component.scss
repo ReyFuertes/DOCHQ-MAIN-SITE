@@ -8,16 +8,16 @@
   padding-right: 0;
 }
 
-.hdw-header-container {
+.hdw-header {
   height: auto;
 
-  .hdw-img .hdw-img-text {
+  .hdw-header__img .hdw-header__img-text {
     background-color: transparent;
     display: none;
   }
 
-  .hdw-text,
-  .hdw-img-text {
+  .hdw-header__text,
+  .hdw-header__img-text {
     background-color: $bg-black;
     color: $color-white;
     padding: 40px;
@@ -36,7 +36,7 @@
     }
   }
 
-  .hdw-img {
+  .hdw-header__img {
     background-image: url('/assets/images/hdw-header-img.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,7 +47,7 @@
 .btn-swu {
   @include btn-primary;
 
-  width: 205px;
+  min-width: 205px;
   display: inline-block;
 }
 
@@ -60,7 +60,7 @@
   margin-bottom: 20px;
 }
 
-.shwd-text {
+.shwd__text {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -78,11 +78,11 @@
   }
 }
 
-.swu-container {
+.swu {
   padding: 70px;
   background-color: $bg-black;
 
-  .swu-title {
+  .swu__title {
     padding: 0 90px;
     border-right: thin $border-line-color solid;
 
@@ -93,7 +93,7 @@
     }
   }
 
-  .swu-parag {
+  .swu__parag {
     padding: 10px 70px;
 
     p {
@@ -109,7 +109,7 @@
 }
 
 .shwd-process,
-.wdt-process {
+.wdt__process {
   height: 190px;
   max-width: 1200px;
   margin: 10px auto;
@@ -127,7 +127,7 @@
   }
 }
 
-.wdt-container {
+.wdt {
   background-color: $bg-whitesmoke;
   margin: 0 auto;
   padding: 40px;
@@ -152,7 +152,7 @@
   }
 }
 
-.da-container {
+.da {
   padding: 50px 150px;
   max-width: 1400px;
   margin: 0 auto;
@@ -187,10 +187,10 @@
 }
 
 @media (max-width: 1550px) {
-  .hdw-header-container {
+  .hdw-header {
 
-    .hdw-text,
-    .hdw-img-text {
+    .hdw-header__text,
+    .hdw-header__img-text {
       padding: 30px;
 
       h1 {
@@ -199,12 +199,12 @@
     }
   }
 
-  .shwd-text {
+  .shwd__text {
     height: auto;
   }
 
   .shwd-process,
-  .wdt-process {
+  .wdt__process {
     height: auto;
 
     img {
@@ -217,10 +217,10 @@
     }
   }
 
-  .swu-container {
+  .swu {
     padding: 20px;
 
-    .swu-title {
+    .swu__title {
       padding: 0 40px;
 
       h1 {
@@ -228,7 +228,7 @@
       }
     }
 
-    .swu-parag {
+    .swu__parag {
       padding: 20px;
 
       p {
@@ -250,7 +250,7 @@
     padding: 50px 20px;
   }
 
-  .da-container {
+  .da {
     padding: 50px;
     max-width: 1400px;
     margin: 0 auto;
@@ -281,10 +281,10 @@
 }
 
 @media (max-width: 990px) {
-  .hdw-header-container {
+  .hdw-header {
 
-    .hdw-text,
-    .hdw-img-text {
+    .hdw-header__text,
+    .hdw-header__img-text {
       padding: 25px;
 
       h1 {
@@ -293,20 +293,20 @@
     }
   }
 
-  .swu-container {
-    .swu-title {
+  .swu {
+    .swu__title {
       h1 {
         font-size: 40px;
       }
     }
 
-    .swu-parag {
+    .swu__parag {
       padding: 10px 30px;
     }
   }
 
   .shwd-process,
-  .wdt-process {
+  .wdt__process {
     height: 125px;
     max-width: 1200px;
     margin: 10px auto;
@@ -324,7 +324,7 @@
     }
   }
 
-  .da-container {
+  .da {
     padding: 30px;
 
     h1 {
@@ -341,12 +341,12 @@
     margin-top: 180px;
   }
 
-  .hdw-header-container {
+  .hdw-header {
     height: auto;
     background-color: $bg-white;
     padding: 0;
 
-    .hdw-img .hdw-img-text {
+    .hdw-header__img .hdw-header__img-text {
       display: block;
 
       h1 {
@@ -361,12 +361,12 @@
     }
   }
 
-  .hdw-text {
+  .hdw-header__text {
     display: none;
   }
 
   .shwd-process,
-  .wdt-process {
+  .wdt__process {
     height: auto;
 
     .media-body {
@@ -374,18 +374,18 @@
     }
   }
 
-  .swu-container {
-    .swu-title {
+  .swu {
+    .swu__title {
       padding: 30px 30px 0 30px;
       border-right: none;
     }
 
-    .swu-parag {
+    .swu__parag {
       padding: 10px 30px;
     }
   }
 
-  .da-container {
+  .da {
     padding: 30px;
 
     .col-md-5 {
@@ -411,8 +411,8 @@
 }
 
 @media (max-width: 600px) {
-  .hdw-header-container {
-    .hdw-img .hdw-img-text {
+  .hdw-header {
+    .hdw-header__img .hdw-header__img-text {
       h1 {
         font-size: 50px;
         line-height: 70px;
@@ -420,7 +420,7 @@
     }
   }
 
-  .shwd-text {
+  .shwd__text {
     padding: 20px;
 
     h1 {
@@ -438,7 +438,7 @@
   }
 
 
-  .da-container {
+  .da {
     h1 {
       margin-bottom: 15px;
     }
@@ -452,7 +452,7 @@
 @media (max-width: 480px) {
 
   .shwd-process,
-  .wdt-process {
+  .wdt__process {
     height: auto;
     max-width: 400px;
     margin: 0 auto;
@@ -464,8 +464,8 @@
     }
   }
 
-  .hdw-header-container {
-    .hdw-img .hdw-img-text {
+  .hdw-header {
+    .hdw-header__img .hdw-header__img-text {
       padding: 10px;
 
       h1 {
@@ -480,7 +480,7 @@
     }
   }
 
-  .shwd-text {
+  .shwd__text {
     padding: 0;
     margin: 15px 0;
 
@@ -494,8 +494,8 @@
     }
   }
 
-  .swu-container {
-    .swu-title {
+  .swu {
+    .swu__title {
       padding: 10px 30px 0 30px;
 
       h1 {
@@ -503,7 +503,7 @@
       }
     }
 
-    .swu-parag {
+    .swu__parag {
       padding: 10px 30px;
 
       p {
@@ -512,7 +512,7 @@
     }
   }
 
-  .wdt-container {
+  .wdt {
     padding: 20px;
 
     .col-12 {
@@ -532,7 +532,7 @@
     }
   }
 
-  .da-container {
+  .da {
     padding: 15px;
 
     h1 {
@@ -550,14 +550,14 @@
   }
 
   .footer-container {
-    padding: 20px 10px;
+    padding: 20px;
   }
 
 }
 
 @media (max-width: 375px) {
   .shwd-process,
-  .wdt-process {
+  .wdt__process {
     .media-body {
       font-size: 16px;
       text-align: left;
@@ -566,8 +566,8 @@
     }
   }
 
-  .hdw-header-container {
-    .hdw-img .hdw-img-text {
+  .hdw-header {
+    .hdw-header__img .hdw-header__img-text {
       padding: 10px;
 
       h1 {
@@ -581,8 +581,8 @@
     }
   }
 
-  .swu-container {
-    .swu-title {
+  .swu {
+    .swu__title {
       padding: 10px 20px;
 
       h1 {
@@ -594,7 +594,7 @@
       margin: 10px 0;
     }
 
-    .swu-parag {
+    .swu__parag {
       padding: 10px 20px;
 
       p {
@@ -603,11 +603,7 @@
     }
   }
 
-  .quote-from-container {
-    height: 160px;
-  }
-
-  .da-container {
+  .da {
     padding: 20px;
 
     .col-md-7 {
@@ -627,7 +623,7 @@
     }
   }
 
-  .da-container {
+  .da {
     padding: 15px;
 
     img {

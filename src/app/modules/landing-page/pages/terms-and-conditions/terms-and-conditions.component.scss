@@ -1,27 +1,30 @@
 @import '../homepage/homepage.component.scss';
 
-.wwa-container {
+.wwa {
   background-color: $bg-white;
+
+  .wwa__desc {
+    text-align: left;
+    max-width: 75%;
+  }
+
+  .wwa__boxed {
+    border: 1px solid #000;
+    padding: 15px;
+    border: 7px double;
+    margin: 20px auto;
+  }
+
+  .wwa__list-alpha {
+    list-style-type: lower-alpha;
+  }
+
+  .wwa__title {
+    max-width: 75%;
+    text-align: center;
+    margin: auto;
+  }
 }
 
-.wwa-desc {
-  text-align:left;
-  max-width: 75%;
-}
 
-.wwa-title {
-  max-width: 75%;
-  text-align: center;
-  margin: auto;
-}
 
-.wwa-list-alpha {
-	list-style-type: lower-alpha;
-}
-
-.wwa-boxed {
-	border: 1px solid #000;
-	padding: 15px;
-	border: 7px double;
-	margin: 20px auto;
-}

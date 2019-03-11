@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -14,6 +14,7 @@ import { PackagesComponent } from './pages/packages/packages.component';
 import { RoiCalculatorComponent } from './components/roi-calculator/roi-calculator.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { ExcelService } from './services/excel.service';
 
 const routes: Routes = [
   {
@@ -70,7 +71,10 @@ const routes: Routes = [
     PackagesComponent,
     RoiCalculatorComponent
   ],
-  providers: [],
+  providers: [
+    ExcelService,
+    CurrencyPipe
+  ],
 })
 
 

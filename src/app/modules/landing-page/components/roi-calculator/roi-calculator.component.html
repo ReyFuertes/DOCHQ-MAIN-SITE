@@ -13,7 +13,7 @@
         <div class="field" [ngClass]="{'field--error': (roiCalculated && !employeeCount) || (calcForm.get('employeeCount').dirty && calcForm.get('employeeCount').errors)}">
           <div class="field__label">Enter number of employees</div>
           <input type="number" min="0" class="field__input d-none" formControlName="employeeCount" name="employeeCount" (blur)="hideInput($event)">
-          <div class="field__input" (click)="showInput($event)">{{calcForm.get('employeeCount').value ? calcForm.get('employeeCount').value : 'e.g. 1000'}}</div>
+          <div class="field__input w-50" (click)="showInput($event)">{{calcForm.get('employeeCount').value ? calcForm.get('employeeCount').value : 'e.g. 1000'}}</div>
         </div>
         <div class="error-message" *ngIf="calcForm.get('employeeCount').errors?.min">
           Minimum allowed number is 0.
@@ -118,7 +118,7 @@
         <div class="col-12">
           <div class="field--nobg">
             <div class="field__label">
-              <div class="info invisible" data-title="Lorem ipsum dolor sit amet">
+              <div class="info" data-title="Different industries have different employee retention rates and associated costs. Our data is taken from Linkedin (2018) research of half a billion LinkedIn members.">
                 <i class="fas fa-info-circle"></i>
               </div>
               <span class="result-label">Retention</span>
@@ -168,7 +168,7 @@
           </div>
         </div>
         <div class="button-container col-12 mt-5">
-          <div class="btn btn--green my-2 mx-md-3">Download detailed report</div>
+          <div class="btn btn--green my-2 mx-md-3" (click)="exportAsXLSX()">Download detailed report</div>
           <div class="btn btn--green my-2 mx-md-3">Share with a colleague</div>
         </div>
       </div>

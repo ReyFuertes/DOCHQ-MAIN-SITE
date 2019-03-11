@@ -16,6 +16,10 @@
     display: none;
   }
 
+  .btn-swu {
+    @include btn-primary;
+  }
+
   .cp-text,
   .cp-img-text {
     background-color: $bg-black;
@@ -256,7 +260,7 @@
 
 .footer-container {
   background-color: $bg-black;
-  height: 350px;
+  height: 100%;
   padding: 50px;
 }
 
@@ -328,7 +332,6 @@
 
 @media (max-width: 768px) {
   .footer-container {
-    height: 270px;
     padding: 30px;
   }
 
@@ -365,6 +368,10 @@
     background-color: $bg-white;
     padding: 0;
 
+    .cp-img {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/packages-cover.jpg');
+    }
+
     .cp-img .cp-img-text {
       display: block;
 
@@ -398,6 +405,7 @@
   }
 
   .cs-container {
+
     .cs-box .col-md-7,
     .cs-box .col-md-3,
     .cs-box .col-md-2 {
@@ -417,8 +425,7 @@
 
 @media (max-width: 480px) {
   .footer-container {
-    padding: 20px 10px;
-    height: 235px;
+    padding: 20px;
   }
 
   .cs-container {
@@ -453,11 +460,6 @@
         margin-bottom: 30px;
         font-size: 18px;
       }
-
-      .btn-swu {
-        margin-bottom: 20px;
-        margin-top: 0;
-      }
     }
   }
 
@@ -478,10 +480,6 @@
 }
 
 @media (max-width: 375px) {
-  .quote-from-container {
-    height: 160px;
-  }
-
   .cs-container {
     .col-md-6 {
       padding: 5px;
@@ -517,10 +515,6 @@
 }
 
 @media (max-width: 360px) {
-  .footer-container {
-    height: 350px;
-  }
-
   .swu-container {
     margin: 0 auto;
     padding: 20px;

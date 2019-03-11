@@ -43,10 +43,10 @@
   }
 
   input.field__input {
-    max-width: 80px;
+    max-width: 120px;
   }
 
-  &--nobg{
+  &--nobg {
     background-color: unset;
     display: flex;
     justify-content: space-between;
@@ -75,7 +75,7 @@
 
 .placeholder {
   .placeholder__image {
-    background-image: url(../../../../../assets/svg/noun_Calculator_1524989.svg);
+    background-image: url('/assets/svg/noun_Calculator_1524989.svg');
     background-size: 100%;
     background-repeat: no-repeat;
     height: 250px;
@@ -114,23 +114,23 @@ select,
 }
 
 select {
-  background: url("data:image/svg+xml;utf8,<svg fill='#E5014D' height='35' viewBox='0 0 23 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M0 6l8 10 10-10z'/></svg>") no-repeat right;
-    -webkit-appearance: none;
-    padding: 0 23px 0 10px;
+  // background: url("data:image/svg+xml;utf8,<svg fill='#E5014D' height='35' viewBox='0 0 23 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M0 6l8 10 10-10z'/></svg>") no-repeat right;
+  -webkit-appearance: none;
+  padding: 0 23px 0 10px;
 
-    &::-webkit-scrollbar-thumb {
-      -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar-thumb {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
 .radio {
   input[type="radio"] {
     opacity: 0;
-      position: relative;
-      left: 50px;
-      top: 5px;
-      height: 25px;
-      width: 25px;
+    position: relative;
+    left: 50px;
+    top: 5px;
+    height: 25px;
+    width: 25px;
 
     &+label::after {
       content: "\f0c8";
@@ -198,12 +198,18 @@ i {
 }
 
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
 
@@ -211,12 +217,17 @@ i {
   cursor: pointer;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .rc {
-    padding: 30px 0;
     .rc__left-panel {
       border: none;
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .rc {
+    padding: 30px 0;
   }
 
   .field {

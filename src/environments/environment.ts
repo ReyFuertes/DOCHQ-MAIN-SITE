@@ -11,7 +11,7 @@ export const environment = {
       contactUs: 'https://landing.dochq.co.uk/contact-us/',
     },
     information: 'https://landing.dochq.co.uk/how-to-video-call/',
-    SpeakWithUs: 'https://landing.dochq.co.uk/general-one-to-one-meeting/'
+    SpeakWithUs: 'https://landing.dochq.co.uk/video-call/'
   }
 };
 

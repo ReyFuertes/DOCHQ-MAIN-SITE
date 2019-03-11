@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
+import { ExcelService } from '../../services/excel.service';
 
 @Component({
   selector: 'app-roi-calculator',
@@ -151,7 +153,7 @@ export class RoiCalculatorComponent implements OnInit {
     }),
     paidSickLeave: []
   });
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private excelService: ExcelService, private currencyPipe: CurrencyPipe) { }
 
   ngOnInit() {
     this.calcForm.controls['selectedIndustry'].valueChanges.subscribe((value) => {
@@ -172,8 +174,10 @@ export class RoiCalculatorComponent implements OnInit {
   }
 
   hideInput(ev) {
+   setTimeout(() => {
     ev.target.nextSibling.classList.remove('d-none');
     ev.target.classList.add('d-none');
+   }, 5000);
   }
 
   calculate() {
@@ -238,5 +242,81 @@ export class RoiCalculatorComponent implements OnInit {
 
   calculateBWPremiumSavings() {
     return Math.round(this.annualCost * 0.40 - this.bwPremium);
+  }
+
+  exportAsXLSX():void {
+    let data = [{
+      a: "Tech Industry",
+      b: this.calcForm.get('selectedIndustry').value.label,
+      c: "",
+      d: "",
+      e: "Direct Cost",
+      f: this.currencyPipe.transform(this.directCost, 'GBP', true)
+    },
+    {
+      a: "Number of employees",
+      b: this.employeeCount.toString(),
+      c: "",
+      d: "",
+      e: "Indirect Cost",
+      f: this.currencyPipe.transform(this.indirectCost, 'GBP', true)
+    },
+    {
+      a: "Do you provide full sick leave?",
+      b: (this.calcForm.get('paidSickLeave').value == 1) ? "Yes" : "No",
+      c: "",
+      d: "",
+      e: "Retention Cost",
+      f: this.currencyPipe.transform(this.retentionCost, 'GBP', true)
+    },
+    {
+      a: "Average sick leave per person (per year)",
+      b: this.industry.sickLeaves.toString(),
+      c: "",
+      d: "",
+      e: "Annual Cost",
+      f: this.currencyPipe.transform(this.annualCost, 'GBP', true)
+    },
+    {
+      a: "Average Salary",
+      b: this.currencyPipe.transform(this.industry.aveSalary, 'GBP', true),
+      c: "",
+      d: "",
+      e: "Annual cost of Back To Work Lite",
+      f: this.currencyPipe.transform(this.bwLite, 'GBP', true),
+      h: "Total Savings",
+      i: this.currencyPipe.transform(this.bwLiteSavings, 'GBP', true)
+    },
+    {
+      a: "Working Days per year",
+      b: this.workingDays.toString(),
+      c: "",
+      d: "",
+      e: "Annual cost of Back To Work",
+      f: this.currencyPipe.transform(this.bw, 'GBP', true),
+      h: "Total Savings",
+      i: this.currencyPipe.transform(this.bwSavings, 'GBP', true)
+    },
+    {
+      a: "Annual attrition rate",
+      b: (this.industry.attrition * 100) + "%",
+      c: "",
+      d: "",
+      e: "Annual cost of DocHQ Wellness",
+      f: this.currencyPipe.transform(this.bwPremium, 'GBP', true),
+      h: "Total Savings",
+      i: this.currencyPipe.transform(this.bwPremiumSavings, 'GBP', true)
+    }];
+    var wscols = [
+      {wch:40},
+      {wch:20},
+      {wch:5},
+      {wch:5},
+      {wch:30},
+      {wch:15},
+      {wch:15},
+      {wch:15}
+    ];
+    this.excelService.exportAsExcelFile(data, "roi_calculator", "ROI Calculator", {skipHeader: true}, wscols);
   }
 }
